@@ -1,0 +1,61 @@
+.hero-container {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    background-color: #101820; /* Fondo oscuro */
+    color: white; /* Color de texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    overflow: hidden; /* Oculta cualquier contenido que salga del contenedor */
+  }
+  
+  .text-highlight {
+    color: #ffcc00; /* Color amarillo */
+  }
+  
+  .sphere-button {
+    width: 25%; /* Tamaño relativo de las esferas */
+    aspect-ratio: 1; /* Mantiene proporción circular */
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Oculta contenido sobrante */
+    position: relative; /* Permite usar desplazamientos como 'top' */
+  }
+  
+  .sphere-button:hover {
+    transform: scale(1.1); /* Agranda la esfera al hacer hover */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); /* Sombra */
+  }
+  
+  .spheres-container {
+    display: flex;
+    gap: 5%; /* Espaciado entre las esferas */
+    justify-content: center; /* Centra las esferas horizontalmente */
+    align-items: center; /* Centra las esferas verticalmente */
+    width: 100%; /* Ocupa todo el ancho */
+    position: relative;
+  }
+  
+  .sphere-button:nth-child(3) {
+    top: 20%;
+  }
+  
+  i, h2{
+      color: #FFF;
+  }
+  
+  .modal-content{
+    background-color: #101820; /* Fondo oscuro */
+    .btn-close{
+      background-color: firebrick;
+    }
+    a{
+      color: #FFF;
+    }
+  }

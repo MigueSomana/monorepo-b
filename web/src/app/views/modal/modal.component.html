@@ -1,0 +1,65 @@
+<div class="modal-dialog">
+    <div class="modal-content" id="accordionP">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col col-11">
+            <h5 class="modal-title">Gestión de Contactos</h5>
+          </div>
+          <div class="col col-1">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+  
+        <ul class="nav nav-tabs nav-fill dark">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="collapse"
+              data-bs-target="#Collapse1"
+              href="#Collapse1"
+              role="button"
+              aria-expanded="false"
+              aria-controls="Collapse1"
+            >
+              Agregar Contacto <i class="bi bi-person-fill-add"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-bs-toggle="collapse"
+              data-bs-target="#Collapse2"
+              href="#Collapse2"
+              role="button"
+              aria-expanded="false"
+              aria-controls="Collapse2"
+            >
+              Editar Contacto <i class="bi bi-person-fill-gear"></i>
+            </a>
+          </li>
+        </ul>
+        <div class="row">
+          <div
+            class="accordion-collapse collapse"
+            id="Collapse1"
+            data-bs-parent="#accordionP"
+          >
+          <app-form-create></app-form-create>
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="Collapse2"
+            data-bs-parent="#accordionP"
+          >
+          <app-form-update></app-form-update>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

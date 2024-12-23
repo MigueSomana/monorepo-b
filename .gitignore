@@ -1,0 +1,22 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Angular
+web/dist/
+web/.angular/
+web/coverage/
+
+# TypeScript
+*.tsbuildinfo
+
+# System Files
+.DS_Store
+Thumbs.db
