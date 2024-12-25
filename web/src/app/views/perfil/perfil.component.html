@@ -1,1 +1,75 @@
-<p>perfil works!</p>
+<div class="modal-dialog modal-lg">
+  <div class="modal-content" id="accordionP">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col col-11">
+          <h5 class="modal-title">Perfil de Contacto</h5>
+        </div>
+        <div class="col col-1">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-4">
+          <div class="card text-bg-dark mb-3">
+            <div class="card-header">
+              <select
+                class="form-select"
+                (focus)="onFocus()"
+                (change)="onContactSelect($event)"
+                [(ngModel)]="idSelect"
+              >
+                <option
+                  *ngFor="let item of contacts; let i = index"
+                  [ngValue]="item"
+                >
+                  {{ item.name }}
+                </option>
+              </select>
+            </div>
+            <div class="card-body text-center">
+              <p class="card-text">Nombre: <br /><strong>{{ idSelect?.name || '' }}</strong></p>
+              <p class="card-text">Email: <br /><strong>{{ idSelect?.email || '' }}</strong></p>
+              <p class="card-text">Balance: <br /><strong>{{ idSelect?.balance || 0 }}</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 align-middle">
+          <div *ngIf="alertMessage" [ngClass]="alertClass" class="alert d-flex align-items-center mt-2 align-middle" role="alert">
+            <i [ngClass]="alertIcon" class="me-2"></i>
+            <div>{{ alertMessage }}</div>
+          </div>
+
+          <div *ngIf="!idSelect" class="icon-data row align-middle " >
+            <i class="bi bi-cloud-slash mx-auto" style="width: auto;"></i>
+            <h2 class="mx-auto text-center" style="width: auto;">No hay operaciones para mostrar</h2>
+          </div>
+
+          <table class="table table-sm table-dark mt-2" *ngIf="idSelect && operations.length > 0">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let operation of operations; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ operation.type }}</td>
+                <td>{{ operation.amount }}</td>
+                <td>{{ operation.createdAt.split('T')[0] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

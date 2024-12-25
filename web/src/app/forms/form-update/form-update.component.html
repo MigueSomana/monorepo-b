@@ -1,15 +1,63 @@
-<form >
-    <div class="form-group">
-        <label for="inputName">Nombre</label>
-        <input type="text" class="form-control" formControlName="inputName" id="inputName" placeholder="Juan Perez">
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="form-group">
+        <label for="name">Seleccionar Contacto Existente</label>
+        <select
+          class="form-select"
+          (focus)="onFocus()"
+          (change)="onContactSelect($event)"
+          [(ngModel)]="idSelect"
+        >
+          <option *ngFor="let item of contacts; let i = index" [value]="item._id">
+            {{ item.name }} - {{ item.email }}
+          </option>
+        </select>
       </div>
-    <div class="form-group">
-      <label for="inputEmail">Email</label>
-      <input type="email" class="form-control" formControlName="inputEmail" id="inputEmail" placeholder="ejemplo123@gmail.com" disabled>
     </div>
-    <div class="form-group">
-        <label for="inputBalance">Balance</label>
-        <input type="number" class="form-control" formControlName="inputbalance" id="inputBalance" placeholder="0" disabled>
+  </div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="name">Nombre Completo</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          [disabled]="!selectedContactId"
+          [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+        />
+        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+          <div *ngIf="f['name'].errors['required']">Este campo es obligatorio</div>
+        </div>
       </div>
-    <button type="submit" class="btn btn-success">Agregar</button>
-</form>
+
+      <div class="form-group col-6">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          [disabled]="!selectedContactId"
+        />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors['required']">Este campo es obligatorio</div>
+          <div *ngIf="f['email'].errors['email']">Email no válido</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="div-cent mt-3">
+      <button type="submit" class="btn btn-success">Actualizar Contacto</button>
+    </div>
+  </form>
+
+  <div *ngIf="alertMessage" [ngClass]="alertClass" class="alert d-flex align-items-center mt-3" role="alert">
+    <i [ngClass]="alertIcon" class="me-2"></i>
+    <div>{{ alertMessage }}</div>
+  </div>
+</div>
+

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+i,
+h2 {
+  color: #fff;
+}
+
+.modal-content {
+  background-color: #101820; /* Fondo oscuro */
+  .btn-close {
+    background-color: firebrick;
+  }
+}
+a,
+.white,
+.white:hover,
+.white:active {
+  color: #fff !important;
+}
+.div-cent {
+  display: flex;
+  align-items: center;
+  .btn {
+    margin: 0 auto;
+  }
+}
+.bi-exclamation-octagon-fill {
+  color: #842029;
+}
+.bi-check-circle-fill {
+  color: #0f5132;
+}
+.bi-exclamation-triangle-fill {
+  color: #664d03;
+}
+
+.icon-data {
+  i {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}

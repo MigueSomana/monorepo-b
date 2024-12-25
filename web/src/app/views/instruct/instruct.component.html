@@ -1,9 +1,9 @@
-<div class="modal-dialog">
+<div class="modal-dialog modal-lg">
     <div class="modal-content" id="accordionP">
       <div class="modal-body">
         <div class="row">
           <div class="col col-11">
-            <h5 class="modal-title">Gestión de Contactos</h5>
+            <h5 class="modal-title">Instrucciones de Uso</h5>
           </div>
           <div class="col col-1">
             <button
@@ -15,7 +15,7 @@
           </div>
         </div>
   
-        <ul class="nav nav-tabs nav-fill dark">
+        <ul class="nav nav-tabs nav-fill dark mt-3">
           <li class="nav-item">
             <a
               class="nav-link white"
@@ -26,7 +26,7 @@
               aria-expanded="false"
               aria-controls="Collapse1"
             >
-              Agregar Contacto <i class="bi bi-person-fill-add"></i>
+              Gestion de Contactos 
             </a>
           </li>
           <li class="nav-item">
@@ -39,7 +39,20 @@
               aria-expanded="false"
               aria-controls="Collapse2"
             >
-              Editar Contacto <i class="bi bi-person-fill-gear"></i>
+              Operaciones de Balance 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link white"
+              data-bs-toggle="collapse"
+              data-bs-target="#Collapse3"
+              href="#Collapse3"
+              role="button"
+              aria-expanded="false"
+              aria-controls="Collapse3"
+            >
+              Información de Contacto
             </a>
           </li>
         </ul>
@@ -49,17 +62,26 @@
             id="Collapse1"
             data-bs-parent="#accordionP"
           >
-          <app-form-create></app-form-create>
+
+
           </div>
           <div
             class="accordion-collapse collapse"
             id="Collapse2"
             data-bs-parent="#accordionP"
           >
-          <app-form-update></app-form-update>
+
+
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="Collapse3"
+            data-bs-parent="#accordionP"
+          >
+
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  

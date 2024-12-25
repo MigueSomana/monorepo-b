@@ -1,56 +1,82 @@
 <div class="hero-container">
-    <h1 class="display-4 fw-bold">
-      Have a look <span class="text-highlight">Around!</span>
-    </h1>
-    <p class="lead">
-      And you will find everything you need to build a great looking website
-    </p>
-  
-    <div class="spheres-container">
-      <!-- Primera esfera -->
-      <button
-        class="sphere-button btn btn-primary"
-        type="button"
-        data-bs-toggle="modal"
-        data-bs-target="#contacto"
-      >
-        <div class="row">
-          <i class="bi bi-person-video2 display-1"></i>
-          <h2>Gestión de Contactos</h2>
-        </div>
-      </button>
-  
-      <div
-        class="modal fade"
-        id="contacto"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <app-modal></app-modal>
+  <h1 class="display-4 fw-bold">
+    Gestiona con nosotros
+    <span class="text-highlight">todos tus contactos!</span>
+  </h1>
+  <p class="lead">Comienza clickeando la opcion de tu preferencia</p>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#instruc">
+  Ver Instrucciones
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="instruc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <app-instruct></app-instruct>
+</div>
+  <div class="spheres-container">
+    <button
+      class="sphere-button btn btn-primary"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#contacto"
+    >
+      <div class="row icon-data">
+        <i class="bi bi-person-video2 "></i>
+        <h2>Gestión de Contactos</h2>
       </div>
-  
-      <!-- Segunda esfera  -->
-      <button
-        class="sphere-button btn btn-success"
-        (click)="onSphereClick('Business')"
-      >
-        <div class="row">
-          <i class="bi bi-cash-coin display-1"></i>
-          <h2>Operaciones de Balance</h2>
-        </div>
-      </button>
-  
-      <!-- Tercera esfera -->
-      <button
-        class="sphere-button btn btn-danger"
-        (click)="onSphereClick('Business')"
-      >
-        <div class="row">
-          <i class="bi bi-person-circle display-1"></i>
-          <h2>Información de Contacto</h2>
-        </div>
-      </button>
+    </button>
+
+    <div
+      class="modal fade"
+      id="contacto"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <app-modal></app-modal>
+    </div>
+    <button
+      class="sphere-button btn btn-success"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#balance"
+    >
+      <div class="row icon-data">
+        <i class="bi bi-cash-coin"></i>
+        <h2>Operaciones de Balance</h2>
+      </div>
+    </button>
+
+    <div
+      class="modal fade"
+      id="balance"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <app-balance></app-balance>
+    </div>
+
+    <button
+      class="sphere-button btn btn-danger"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#perfil"
+    >
+      <div class="row icon-data">
+        <i class="bi bi-person-circle "></i>
+        <h2>Información de Contacto</h2>
+      </div>
+    </button>
+
+    <div
+      class="modal fade"
+      id="perfil"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <app-perfil></app-perfil>
     </div>
   </div>
-  
+</div>
