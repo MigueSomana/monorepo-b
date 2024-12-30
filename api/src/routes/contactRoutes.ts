@@ -4,6 +4,8 @@ import { contactValidators, businessValidators } from '../middleware/validation'
 
 const router = express.Router();
 
+// Rutas de contactos
+
 router.post('/contacts', 
   contactValidators.create,
   businessValidators.uniqueEmail,

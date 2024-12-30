@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import { IOperation } from '../types';
 
+// Schema de Operación
 const OperationSchema: Schema = new Schema({
   contactId: {
     type: Schema.Types.ObjectId,
@@ -9,7 +10,7 @@ const OperationSchema: Schema = new Schema({
   },
   type: {
     type: String,
-    enum: ['BUY', 'SELL'],
+    enum: ['PAGAR', 'COBRAR'],
     required: true
   },
   amount: {

@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-  FormsModule,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { Contact } from '../../models/contact';
 import { Operation, OperationType } from '../../models/operation';
 import { GetApiService } from '../../services/get-api.service';
@@ -33,7 +27,7 @@ export class GestionarComponent implements OnInit {
   //Constructor formulario y servicios de la api
   constructor(private contactService: GetApiService, private fb: FormBuilder) {
     this.operationForm = this.fb.group({
-      type: ['BUY', Validators.required],
+      type: ['COBRAR', Validators.required],
       amount: [null, [Validators.required, Validators.min(0.01)]],
     });
   }

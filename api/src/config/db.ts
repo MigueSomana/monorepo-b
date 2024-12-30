@@ -3,10 +3,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+//Conexión a la base de datos
 const connectDB = async (): Promise<void> => {
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI as string, {
-      // These options might need to be adjusted based on your MongoDB version
       retryWrites: true,
       w: 'majority'
     });

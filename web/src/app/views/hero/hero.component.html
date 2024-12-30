@@ -4,78 +4,48 @@
     <span class="text-highlight">todos tus contactos!</span>
   </h1>
   <p class="lead">Comienza clickeando la opcion de tu preferencia</p>
-  <!-- Button trigger modal -->
+  <!-- Boton Instrucciones -->
 <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#instruc">
   Ver Instrucciones
 </button>
 
-<!-- Modal -->
+<!-- Modal Instrucciones -->
 <div class="modal fade" id="instruc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <app-instruct></app-instruct>
 </div>
+<!-- Esferas -->
   <div class="spheres-container">
-    <button
-      class="sphere-button btn btn-primary"
-      type="button"
-      data-bs-toggle="modal"
-      data-bs-target="#contacto"
-    >
+    <!-- Boton Contacto -->
+    <button class="sphere-button btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#contacto">
       <div class="row icon-data">
         <i class="bi bi-person-video2 "></i>
         <h2>Gestión de Contactos</h2>
       </div>
     </button>
-
-    <div
-      class="modal fade"
-      id="contacto"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <!-- Modal Contacto -->
+    <div class="modal fade" id="contacto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <app-modal></app-modal>
     </div>
-    <button
-      class="sphere-button btn btn-success"
-      type="button"
-      data-bs-toggle="modal"
-      data-bs-target="#balance"
-    >
+    <!-- Boton Balance -->
+    <button class="sphere-button btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#balance">
       <div class="row icon-data">
         <i class="bi bi-cash-coin"></i>
         <h2>Operaciones de Balance</h2>
       </div>
     </button>
-
-    <div
-      class="modal fade"
-      id="balance"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <!-- Modal Balance -->
+    <div class="modal fade" id="balance" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <app-balance></app-balance>
     </div>
-
-    <button
-      class="sphere-button btn btn-danger"
-      type="button"
-      data-bs-toggle="modal"
-      data-bs-target="#perfil"
-    >
+    <!-- Boton Perfil -->
+    <button class="sphere-button btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#perfil">
       <div class="row icon-data">
         <i class="bi bi-person-circle "></i>
         <h2>Información de Contacto</h2>
       </div>
     </button>
-
-    <div
-      class="modal fade"
-      id="perfil"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <!-- Modal Perfil -->
+    <div class="modal fade" id="perfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <app-perfil></app-perfil>
     </div>
   </div>

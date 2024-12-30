@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import { IContact } from '../types';
 
+// Schema de Contacto
 const ContactSchema: Schema = new Schema({
   email: {
     type: String,

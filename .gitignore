@@ -1,22 +1,6 @@
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Angular
-web/dist/
-web/.angular/
-web/coverage/
-
-# TypeScript
-*.tsbuildinfo
-
-# System Files
-.DS_Store
-Thumbs.db
+/web/.vscode
+/web/.angular
+/web/node_modules
+/api/node_modules
+/api/.env
+/node_modules

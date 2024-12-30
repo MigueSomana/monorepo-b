@@ -4,6 +4,8 @@ import { GetApiService } from '../../services/get-api.service';
 import { CommonModule } from '@angular/common';
 import { Contact } from '../../models/contact';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-form-update',
   imports: [ReactiveFormsModule, FormsModule, CommonModule],
@@ -80,9 +82,27 @@ export class FormUpdateComponent implements OnInit {
     });
   }
 
-  // Get para acceder a los controles del formulario
+  //Obtener los controles del formulario
   get f() {
     return this.contactForm.controls;
+  }
+
+  //Resetear el formulario
+  resetForm() {
+    this.submitted = false;
+    this.contactForm.reset();
+    this.alertMessage = '';
+    this.alertClass = '';
+    this.alertIcon = '';
+  }
+
+  //Cerrar el modal
+  private closeModal() {
+    const modalElement = document.getElementById('contacto');
+    if (modalElement) {
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal?.hide();
+    }
   }
 
   //Enviar a la api el contacto para actualizar y emitir alertas
@@ -107,6 +127,10 @@ export class FormUpdateComponent implements OnInit {
             name: contactData.name,
             email: contactData.email,
           });
+          setTimeout(() => {
+            this.closeModal();
+            this.resetForm();
+          }, 1000);
           this.loadContacts();
           this.showAlert(
             '¡Contacto actualizado exitosamente!',
@@ -126,7 +150,7 @@ export class FormUpdateComponent implements OnInit {
       });
   }
 
-  //Complementario de mostrar alertas
+  //Complementario  alertas
   private showAlert(message: string, alertClass: string, icon: string) {
     this.alertMessage = message;
     this.alertClass = alertClass;

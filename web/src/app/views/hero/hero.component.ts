@@ -6,7 +6,7 @@ import { InstructComponent } from '../instruct/instruct.component';
 
 @Component({
   selector: 'app-hero',
-  imports: [ModalComponent,BalanceComponent,PerfilComponent,InstructComponent],
+  imports: [ ModalComponent, BalanceComponent, PerfilComponent, InstructComponent ],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })

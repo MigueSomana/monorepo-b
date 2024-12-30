@@ -1,11 +1,13 @@
+//Interface de tipo de Operacion
 export enum OperationType {
-    BUY = 'BUY',
-    SELL = 'SELL'
-  }
-  
-  export interface Operation {
-    _id?: string;
-    contactId: string;
-    type: OperationType;
-    amount: number;
-  }
+  PAGAR = 'PAGAR',
+  COBRAR = 'COBRAR',
+}
+
+//Interface de operacion
+export interface Operation {
+  _id?: string;
+  contactId: string;
+  type: OperationType;
+  amount: number;
+}

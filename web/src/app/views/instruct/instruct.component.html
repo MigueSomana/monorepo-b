@@ -1,87 +1,88 @@
-<div class="modal-dialog modal-lg">
-    <div class="modal-content" id="accordionP">
-      <div class="modal-body">
-        <div class="row">
-          <div class="col col-11">
-            <h5 class="modal-title">Instrucciones de Uso</h5>
-          </div>
-          <div class="col col-1">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+<div class="modal-dialog modal-centered">
+  <div class="modal-content" id="accordionP">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col col-11">
+          <h5 class="modal-title">Instrucciones Básicas</h5>
+        </div>
+        <div class="col col-1">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <hr style="border: 1px solid #fff; margin: 10px 0" />
+        <div
+          class="row d-flex align-items-center justify-content-center"
+          style="margin-top: 3%"
+        >
+          <button class="sphere-button btn btn-primary">
+            <div class="row icon-data">
+              <i class="bi bi-person-video2"></i>
+              <h2>Gestión de Contactos</h2>
+            </div>
+          </button>
+          <div class="row ml-5 mt-2">
+            <div class="col-6">
+              <a>Agregar Contacto <i class="bi bi-person-fill-add"></i> </a>
+              <ul>
+                <li>Nombre</li>
+                <li>Email</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <a>Editar Contacto <i class="bi bi-person-fill-gear"></i> </a>
+              <ul>
+                <li>Seleccionar contacto</li>
+                <li>Nombre</li>
+                <li>Email (Desahabilitado)</li>
+              </ul>
+            </div>
           </div>
         </div>
-  
-        <ul class="nav nav-tabs nav-fill dark mt-3">
-          <li class="nav-item">
-            <a
-              class="nav-link white"
-              data-bs-toggle="collapse"
-              data-bs-target="#Collapse1"
-              href="#Collapse1"
-              role="button"
-              aria-expanded="false"
-              aria-controls="Collapse1"
+        <hr style="border: 1px solid #fff; margin: 10px 0" />
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div
+              class="col-6"
             >
-              Gestion de Contactos 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link white"
-              data-bs-toggle="collapse"
-              data-bs-target="#Collapse2"
-              href="#Collapse2"
-              role="button"
-              aria-expanded="false"
-              aria-controls="Collapse2"
-            >
-              Operaciones de Balance 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link white"
-              data-bs-toggle="collapse"
-              data-bs-target="#Collapse3"
-              href="#Collapse3"
-              role="button"
-              aria-expanded="false"
-              aria-controls="Collapse3"
-            >
-              Información de Contacto
-            </a>
-          </li>
-        </ul>
-        <div class="row">
-          <div
-            class="accordion-collapse collapse show"
-            id="Collapse1"
-            data-bs-parent="#accordionP"
-          >
-
-
+              <div class="row d-flex align-items-center justify-content-center">
+                <button class="sphere-button btn btn-success">
+                  <div class="icon-data">
+                    <i class="bi bi-cash-coin"></i>
+                    <h2>Operaciones de Balance</h2>
+                  </div>
+                </button>
+                <ul>
+                  <li>Seleccionar contacto</li>
+                  <li>Tipo (COBRAR o PAGAR)</li>
+                  <li>Monto</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="row d-flex align-items-center justify-content-center" style="border-left: 2px solid #4c5258; height: 100%">
+                <button class="sphere-button btn btn-danger">
+                  <div class="icon-data">
+                    <i class="bi bi-person-circle"></i>
+                    <h2>Información de Contacto</h2>
+                  </div>
+                </button>
+                <ul>
+                  <li>Seleccionar contacto</li>
+                </ul>
+                <I>Usado para visualización</I>
+              </div>
+            </div>
           </div>
-          <div
-            class="accordion-collapse collapse"
-            id="Collapse2"
-            data-bs-parent="#accordionP"
-          >
-
-
-          </div>
-          <div
-            class="accordion-collapse collapse"
-            id="Collapse3"
-            data-bs-parent="#accordionP"
-          >
-
-
-          </div>
+        </div>
+        <hr style="border: 1px solid #fff; margin: 10px 0" />
+        <div class="row mt-3 d-flex text-center">
+          <p class=" text-center"><I>Para profundizar aun mas las intrucciones visualice el README dentro del repositorio :-) </I></p>
         </div>
       </div>
     </div>
   </div>
+</div>

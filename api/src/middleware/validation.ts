@@ -2,7 +2,6 @@ import { body, param, validationResult } from 'express-validator';
 import { Request, Response, NextFunction } from 'express';
 import mongoose from 'mongoose';
 
-// Función helper para validar ObjectId
 const isValidObjectId = (value: string) => mongoose.Types.ObjectId.isValid(value);
 
 // Middleware para manejar errores de validación
@@ -75,8 +74,8 @@ export const operationValidators = {
       .withMessage('ID de contacto inválido'),
     body('type')
       .trim()
-      .isIn(['BUY', 'SELL'])
-      .withMessage('El tipo debe ser BUY o SELL'),
+      .isIn(['PAGAR', 'COBRAR'])
+      .withMessage('El tipo debe ser PAGAR o COBRAR'),
     body('amount')
       .isFloat({ min: 0.01, max: 999999.99 })
       .withMessage('El monto debe ser un número positivo menor a 1,000,000')

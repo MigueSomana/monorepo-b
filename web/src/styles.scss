@@ -40,3 +40,12 @@ a,
     font-size: 3rem;
   }
 }
+.modal.fade .modal-centered {
+  display: flex;
+  align-items: center;
+  height: 100vh; 
+}
+
+.modal.fade .modal-dialog {
+  margin: auto; 
+}

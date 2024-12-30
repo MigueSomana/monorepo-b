@@ -1,0 +1,32 @@
+.sphere-button {
+    width: 20%; /* Tamaño relativo de las esferas */
+    aspect-ratio: 1; /* Mantiene proporción circular */
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Oculta contenido sobrante */
+    position: relative; /* Permite usar desplazamientos como 'top' */
+  }
+  .icon-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 2rem !important;
+      margin: -20px 0 0 0;
+    }
+    h2 {
+      font-size: 0.65rem !important;
+      margin: -10px 0 0 0;
+    }
+  }
+  .col-6{
+    .sphere-button {
+        width: 40%;
+    }
+  }

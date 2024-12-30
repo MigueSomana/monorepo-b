@@ -1,3 +1,5 @@
+// Interfaces de respuestas de la API
+
 export interface IContact {
   email: string;
   name: string;

@@ -4,6 +4,7 @@ import Contact from "../models/Contact";
 import Operation from "../models/Operation";
 import { APIResponse, IOperation } from "../types";
 
+// Controlador de operaciones
 export const operationController = {
   // Crear operación (con transacción)
   async create(req: Request, res: Response) {
@@ -12,8 +13,6 @@ export const operationController = {
 
     try {
       const { contactId, type, amount } = req.body;
-
-      // Verificar que el contacto existe
       const contact = await Contact.findById(contactId).session(session);
       if (!contact) {
         throw new Error("Contact not found");
@@ -26,16 +25,13 @@ export const operationController = {
         amount,
       });
 
-      // Actualizar el balance del contacto
-      const balanceChange = type === "BUY" ? -amount : type === "SELL" ? amount : 0;
+      const balanceChange = type === "PAGAR" ? -amount : type === "COBRAR" ? amount : 0;
       const newBalance = contact.balance + balanceChange;
 
-      // Validar que el balance no quede negativo
       if (newBalance < 0) {
         throw new Error("Insufficient funds");
       }
 
-      // Guardar la operación y actualizar el balance
       await operation.save({ session });
       contact.balance = newBalance;
       await contact.save({ session });

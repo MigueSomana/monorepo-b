@@ -4,6 +4,8 @@ import { operationValidators, businessValidators } from '../middleware/validatio
 
 const router = express.Router();
 
+// Rutas de operaciones
+
 router.post('/operations', 
   operationValidators.create,
   businessValidators.contactExists,

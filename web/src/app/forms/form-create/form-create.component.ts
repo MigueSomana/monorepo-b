@@ -4,6 +4,8 @@ import { GetApiService } from '../../services/get-api.service';
 import { CommonModule } from '@angular/common'
 import { Contact } from '../../models/contact';
 
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-form-create',
   imports: [ReactiveFormsModule,CommonModule],
@@ -33,11 +35,29 @@ export class FormCreateComponent implements OnInit {
     });
   }
 
-  // Get para acceder a los controles del formulario
+  //Obtener los controles del formulario
   get f() {
     return this.contactForm.controls;
   }
 
+  //Resetear el formulario
+  resetForm() {
+    this.submitted = false;
+    this.contactForm.reset();
+    this.alertMessage = '';
+    this.alertClass = '';
+    this.alertIcon = '';
+  }
+
+  //Cerrar el modal
+  private closeModal() {
+    const modalElement = document.getElementById('contacto');
+    if (modalElement) {
+      const modal = bootstrap.Modal.getInstance(modalElement);
+      modal?.hide();
+    }
+  }
+  
   //Enviar a la api el nuevo contacto y emitir alertas
   onSubmit() {
     this.submitted = true;
@@ -55,8 +75,10 @@ export class FormCreateComponent implements OnInit {
 
     this.contactService.createContact(newContact).subscribe({
       next: () => {
-        this.contactForm.reset();
-        this.submitted = false;
+        setTimeout(() => {
+          this.closeModal();
+          this.resetForm();
+        }, 1000);
         this.showAlert(
           '¡Contacto creado exitosamente!',
           'alert alert-success d-flex align-items-center',
@@ -74,7 +96,7 @@ export class FormCreateComponent implements OnInit {
     });
   }
 
-  //Complementario de mostrar alertas
+  //Complementario de alertas
   private showAlert(message: string, alertClass: string, icon: string) {
     this.alertMessage = message;
     this.alertClass = alertClass;

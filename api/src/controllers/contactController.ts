@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import Contact from '../models/Contact';
 import { APIResponse, IContact } from '../types';
 
+//Controlador de contactos
 export const contactController = {
   // Crear contacto
   async create(req: Request, res: Response) {
