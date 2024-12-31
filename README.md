@@ -12,7 +12,7 @@ npm run install:all
 Para iniciar los servidores de backend y frontend
 
 ```bash
-npm run start
+npm run dev
 ```
 > El localhost de backend es el puerto 3000 y el de frontend es el puerto 4200
 
@@ -101,3 +101,4 @@ npm i -D karma
 npm i -D typescript
 //Ya no deberia dar problemas al correr el servidor
 ```
+*Este proyecto fue hecho como parte de la prueba técnica de Aether Solutions*
