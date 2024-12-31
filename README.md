@@ -16,7 +16,7 @@ npm run dev
 ```
 > El localhost de backend es el puerto 3000 y el de frontend es el puerto 4200
 
-## Instrucciones de Uso
+## Instrucciones Completas de la web
 
 [![image.png](https://i.postimg.cc/TYxm28wY/image.png)](https://postimg.cc/3WLW9cmP)
 
