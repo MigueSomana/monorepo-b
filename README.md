@@ -2,9 +2,13 @@
 
 ## Configuración Inicial
 
+### Instalando dependencias
+
 Para instalar todas las dependencias necesarias
 
 ```bash
+//En la carpeta raiz
+
 npm run install:all
 ```
 > En caso de problemas con la instalación de paquetes verificar el final de este documento
@@ -14,6 +18,17 @@ Para iniciar los servidores de backend y frontend
 ```bash
 npm run dev
 ```
+> El localhost de backend es el puerto 3000 y el de frontend es el puerto 4200
+
+### Usando Docker
+
+Para iniciar el proyecto con Docker (Sin usar dependencias)
+```bash
+//En la carpeta raiz
+docker-compose build
+docker.compose up
+```
+> Este es un metodo alternativo y más directo
 > El localhost de backend es el puerto 3000 y el de frontend es el puerto 4200
 
 ## Instrucciones Completas de la Web
@@ -58,6 +73,7 @@ Al hacer click en esta opcion se desplega una ventana modal en la cual solamente
 En caso de no funcionar al hacer el npm run install:all, se recomienda instalar cada modulo de forma manual, para lo cual se listan a continuación
 ```bash
 //En la carpeta raiz
+
 npm i concurrently
 cd api
 npm i cors
@@ -99,6 +115,7 @@ npm i -D karma-jasmine-html-reporter
 npm i -D karma-jasmine
 npm i -D karma
 npm i -D typescript
+
 //Ya no deberia dar problemas al correr el servidor
 ```
 *Este proyecto fue hecho como parte de la prueba técnica de Aether Solutions*
