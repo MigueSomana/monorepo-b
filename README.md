@@ -25,6 +25,7 @@ npm run dev
 Para iniciar el proyecto con Docker (Sin usar dependencias)
 ```bash
 //En la carpeta raiz
+
 docker-compose build
 docker.compose up
 ```
